@@ -1,46 +1,35 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ArabGeoText" width="720"/>
+<img src="assets/banner.png" alt="ArabGeoText" width="700"/>
 
 ### Tool-Augmented Vision–Language Models for Arabic Geospatial Text Spotting
 
-Yakoub Bazi · Sarah Alsaleh · Mohamad M. Al Rahhal · Mohamed A. Mekhtiche · Mansour Zuair
+Yakoub Bazi, Sarah Alsaleh, Mohamad M. Al Rahhal, Mohamed A. Mekhtiche, Mansour Zuair
 
 King Saud University, Riyadh, Saudi Arabia
-
-[![Status](https://img.shields.io/badge/status-in%20preparation-orange.svg)](#-status)
-[![License](https://img.shields.io/badge/code-Apache%202.0-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](#)
 
 </div>
 
 ---
 
-## 🧭 About
+## Overview
 
-**ArabGeoText** is a benchmark and a set of models for *geospatial text spotting*: locating
-and transcribing the place names rendered on map tiles and on map–imagery composites.
+ArabGeoText is a benchmark and a set of models for Arabic geospatial text spotting:
+detecting and transcribing place names on OpenStreetMap renderings and on map–imagery
+composites. The benchmark covers 970 locations in Riyadh and Jeddah with 17,875 annotated
+text instances per view.
 
-Arabic map labels are small, densely packed and mostly rotated, and they follow roads rather
-than a horizontal baseline. That makes them a different problem from document OCR or scene
-text, and one that existing Arabic OCR resources do not cover.
+## Release status
 
-## 🚧 Status
+| Item | Status |
+|---|---|
+| Inference code | Coming soon |
+| Evaluation code | Coming soon |
+| Pre-trained models | Coming soon |
+| Training code | Coming soon |
+| Dataset | Coming soon |
 
-Code, models and data are being released in stages.
-
-| | |
-|---|:--|
-| 🕒 | Inference — detector and reader |
-| 🕒 | Evaluation protocol and metrics |
-| 🕒 | Pre-trained weights |
-| 🕒 | Interactive demo |
-| 🕒 | Training code |
-| 🕒 | Dataset |
-
-Star or watch the repository to be notified as each lands.
-
-## 📄 Citation
+## Citation
 
 ```bibtex
 @article{arabgeotext2026,
@@ -52,10 +41,11 @@ Star or watch the repository to be notified as each lands.
 }
 ```
 
-## 📬 Contact
+## Contact
 
-Yakoub Bazi — [ybazi@ksu.edu.sa](mailto:ybazi@ksu.edu.sa)
+Yakoub Bazi — ybazi@ksu.edu.sa
 
-## 🙏 Acknowledgements
+## License
 
-Map data © OpenStreetMap contributors, [ODbL](https://www.openstreetmap.org/copyright).
+Code is released under the Apache 2.0 License.
+Map data © OpenStreetMap contributors (ODbL).
