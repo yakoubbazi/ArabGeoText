@@ -24,8 +24,6 @@ text regions, and the model reads them.
 
 <img src="assets/fig_paradigms.png" width="100%"/>
 
-On held-out Riyadh tiles this raises end-to-end H-mean from 12.8 to 74.4.
-
 ## Release status
 
 | Item | Status |
