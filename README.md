@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ArabGeoText" width="700"/>
+<img src="assets/banner.png" alt="ArabGeoText" width="620"/>
 
 ### Tool-Augmented Vision–Language Models for Arabic Geospatial Text Spotting
 
@@ -10,54 +10,21 @@ King Saud University, Riyadh, Saudi Arabia
 
 </div>
 
----
+<img src="assets/teaser.png" width="100%"/>
 
-## Overview
+**ArabGeoText** detects and reads Arabic place names on map tiles and satellite imagery.
+The benchmark covers 970 locations in Riyadh and Jeddah with 17,875 annotated text
+instances, in paired OpenStreetMap and map–imagery views.
 
-ArabGeoText is a benchmark and a set of models for Arabic geospatial text spotting:
-detecting and transcribing the place names rendered on OpenStreetMap tiles and on
-map–imagery composites. The benchmark covers 970 locations in Riyadh and Jeddah with
-17,875 annotated text instances per view.
+## Approach
 
-## Dataset
+A vision–language model reads a cropped word well, but placing polygons for every label in
+a 1024×1024 tile is a different problem. We therefore separate the two: a detector finds the
+text regions, and the model reads them.
 
-Each location is provided in two paired views carrying identical labels at identical
-positions: an OpenStreetMap rendering, and the same rendering composited over satellite
-imagery. Tiles are 1024×1024 at Web Mercator zoom 18 (about 0.55 m/pixel).
+<img src="assets/fig_paradigms.png" width="100%"/>
 
-<p align="center">
-  <img src="assets/fig_examples_osm.png" width="85%"/><br/>
-  <img src="assets/fig_examples_overlay.png" width="85%"/>
-</p>
-<p align="center"><sub>Annotated examples: OSM view (top) and RS+OSM view (bottom).</sub></p>
-
-## Method
-
-We compare direct spotting, where a single vision–language model generates polygons and
-transcriptions from the whole tile, against a tool-augmented pipeline in which a detector
-supplies text regions and the VLM reads them.
-
-<p align="center">
-  <img src="assets/fig_paradigms.png" width="95%"/>
-</p>
-<p align="center"><sub>(a) direct VLM spotting &nbsp;·&nbsp; (b) detector with a frozen
-reader &nbsp;·&nbsp; (c) detector with an adapted reader.</sub></p>
-
-Each detected region is reduced to an oriented quadrilateral, rectified, and enlarged
-before recognition.
-
-<p align="center">
-  <img src="assets/fig_crop_pipeline.png" width="55%"/>
-</p>
-<p align="center"><sub>(a) detected region &nbsp;·&nbsp; (b) axis-aligned crop
-&nbsp;·&nbsp; (c) rectified and scaled crop given to the reader.</sub></p>
-
-## Results
-
-<p align="center">
-  <img src="assets/fig_qualitative.png" width="55%"/>
-</p>
-<p align="center"><sub>Reference annotations in magenta, predictions in blue.</sub></p>
+On held-out Riyadh tiles this raises end-to-end H-mean from 12.8 to 74.4.
 
 ## Release status
 
@@ -87,5 +54,4 @@ Yakoub Bazi — ybazi@ksu.edu.sa
 
 ## License
 
-Code is released under the Apache 2.0 License.
-Map data © OpenStreetMap contributors (ODbL).
+Apache 2.0. Map data © OpenStreetMap contributors (ODbL).
