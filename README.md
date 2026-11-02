@@ -52,4 +52,4 @@ Yakoub Bazi — ybazi@ksu.edu.sa
 
 ## ⚖️ License
 
-Apache 2.0. Map data © OpenStreetMap contributors (ODbL).
+See [LICENSE](LICENSE). Map data © OpenStreetMap contributors (ODbL).
